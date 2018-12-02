@@ -1,0 +1,9 @@
+---
+- name: install the latest version of Apache
+  apt:
+    name: apache2
+    state: latest
+
+- name: start and enable httpd
+  service: name=apache2 state=started enabled=yes
+  when: packer_builder_type == "amazon-ebs"

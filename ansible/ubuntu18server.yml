@@ -1,0 +1,11 @@
+
+---
+- name: Install PHP, FPM, apache2 and modules
+  hosts: all
+  vars:
+    ansible_python_interpreter: "/usr/bin/env python3"
+  become: true
+  become_method: sudo
+  roles:
+    - common-ubuntu
+    - apache2

@@ -23,6 +23,15 @@ resource "aws_instance" "simple_ec2" {
 #    key_name        = "XXX"
 #
 
+
+
+
+
+
+
+
+
+
 # data "aws_ami" "server_ami" {
 #   most_recent      = true
 

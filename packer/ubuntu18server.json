@@ -1,0 +1,30 @@
+{
+    "builders": [
+        {   
+            "type": "amazon-ebs",
+            "access_key": "{{user `aws_access_key`}}",
+            "secret_key": "{{user `aws_secret_key`}}",
+            "region": "eu-west-1",
+            "source_ami": "ami-00035f41c82244dab",
+            "instance_type": "t3.micro",
+            "ssh_username": "ubuntu",
+            "ami_name": "my_apache",
+            "ami_description": "Ubuntu18LTS", 
+            "tags": {
+                "role": "web_Server"
+            },
+            "run_tags": {
+                "role": "packer_machine"
+            },
+            "force_deregister": true,
+            "force_delete_snapshot": true 
+            
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "ansible",
+            "playbook_file": "../ansible/ubuntu18server.yml"
+        }
+    ]
+}
