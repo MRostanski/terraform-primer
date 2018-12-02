@@ -1,0 +1,9 @@
+---
+- name: install the latest version of Apache
+  yum:
+    name: httpd
+    state: latest
+
+- name: start and enable httpd
+  service: name=httpd state=started enabled=yes
+  when: packer_builder_type == "amazon-ebs"

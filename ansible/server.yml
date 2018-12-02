@@ -1,0 +1,10 @@
+
+---
+- name: Install PHP, FPM, httpd and modules
+  hosts: all
+  become: true
+  #become_user: ec2-user
+  become_method: sudo
+  roles:
+    - common
+    - httpd
