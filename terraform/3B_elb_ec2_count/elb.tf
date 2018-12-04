@@ -22,6 +22,7 @@ resource "aws_elb" "sodo_elb" {
     idle_timeout                = 400
     connection_draining         = true
     connection_draining_timeout = 400
+    security_groups = ["${aws_security_group.sg_elb.id}"]
 }
 
 resource "aws_lb_cookie_stickiness_policy" "default" {
