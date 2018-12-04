@@ -1,0 +1,9 @@
+# Populate variables in variables.tf file.
+account_name = "testingredbutton"
+root_mail = "support@ac-project.net"
+role_name = "OrganizationAccountAccessRole"  # This is the default role name in AWS
+access_to_billing = "DENY"
+aws_region = "eu-west-1"
+deployment_name = "testing"
+mfa_group_name = "mfa-users"
+deployment_domain = "ac-lab.io"
